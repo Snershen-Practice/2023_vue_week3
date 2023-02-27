@@ -85,7 +85,7 @@ const app = {
   },
   mounted() {
     //將 cookie 取出，並代入到 request 的 header 裡
-    const token = document.cookie.replace(/(?:(?:^|.*;\s*)hexToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
+    const token = document.cookie.replace(/(?:(?:^|.*;\s*)sportToken\s*=\s*([^;]*).*$)|^.*$/, '$1');
     axios.defaults.headers.common['Authorization'] = token;
     this.checkLogin();
     // Bootstrap
