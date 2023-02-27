@@ -19,10 +19,16 @@ const app = {
   methods: {
     checkLogin() {
       const apiUrl = `${baseUrl}/v2/api/user/check`;
-      axios.post(apiUrl).then((res) => {
-        console.log(res);
-        this.getProduct();
-      });
+      axios
+        .post(apiUrl)
+        .then((res) => {
+          // console.log(res);
+          this.getProduct();
+        })
+        .catch((err) => {
+          alert(err.data.message);
+          window.location = 'login.html';
+        });
     },
     getProduct() {
       const apiUrl = `${baseUrl}/v2/api/${api_path}/admin/products/all`;
