@@ -19,10 +19,11 @@ const app = {
         .then((res) => {
           const { token, expired } = res.data;
           document.cookie = `sportToken=${token}; expires=${expired};`;
+          console.log(res);
           window.location = 'product.html';
         })
         .catch((err) => {
-          console.log(err.data.message);
+          alert(err.data.message);
         });
     },
   },

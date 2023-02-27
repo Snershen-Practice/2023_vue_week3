@@ -20,7 +20,7 @@ const app = {
     checkLogin() {
       const apiUrl = `${baseUrl}/v2/api/user/check`;
       axios.post(apiUrl).then((res) => {
-        // console.log(res);
+        console.log(res);
         this.getProduct();
       });
     },
